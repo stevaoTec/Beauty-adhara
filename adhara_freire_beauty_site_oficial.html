@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adhara Freire | Beauty & Maquiagem — Itajubá, MG</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cormorant Garamond (Luxury Serif) &Plus Jakarta Sans (Clean Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ivory: '#FCF9F6',
+                        beige: {
+                            50: '#F9F4EF',
+                            100: '#F3EAE0',
+                            200: '#E6D5C3',
+                            800: '#5C4938',
+                            900: '#3A2D22'
+                        },
+                        rose: {
+                            soft: '#F4E3DF',
+                            blush: '#E8C5BE',
+                            gold: '#C88D83',
+                            deep: '#9E6258'
+                        },
+                        gold: {
+                            light: '#F1E0B8',
+                            DEFAULT: '#C5A059',
+                            dark: '#9B7832'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Aesthetics & Marble/Gold Effects */
+        body {
+            background-color: #FCF9F6;
+            color: #3A2D22;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Metallic Rose Gold & Gold Text Gradients */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #9B7832 0%, #D8B776 35%, #B38A4C 55%, #E5C88E 80%, #9B7832 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 6s linear infinite;
+        }
+
+        .text-rosegold-gradient {
+            background: linear-gradient(135deg, #9E6258 0%, #DFA89F 45%, #B87B71 70%, #F1C9C2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-gold-metallic {
+            background: linear-gradient(135deg, #C5A059 0%, #DFC082 50%, #B38B45 100%);
+        }
+
+        .bg-rosegold-metallic {
+            background: linear-gradient(135deg, #C88D83 0%, #E4B5AD 50%, #B1746A 100%);
+        }
+
+        .border-gold-subtle {
+            border-color: rgba(197, 160, 89, 0.3);
+        }
+
+        /* Subtle Rose Marble Background Pattern */
+        .marble-texture {
+            background-color: #FAF3F0;
+            background-image: 
+                radial-gradient(at 15% 20%, rgba(232, 197, 190, 0.45) 0px, transparent 50%),
+                radial-gradient(at 85% 75%, rgba(241, 224, 184, 0.35) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(255, 255, 255, 0.8) 0px, transparent 60%);
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /* Curtain Opening Intro Effect */
+        #intro-portal {
+            perspective: 1500px;
+            pointer-events: all;
+        }
+        #intro-portal.portal-opened {
+            pointer-events: none;
+        }
+        .portal-door-left {
+            transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1), opacity 1.4s ease;
+            transform-origin: left center;
+        }
+        .portal-door-right {
+            transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1), opacity 1.4s ease;
+            transform-origin: right center;
+        }
+        .portal-center-seal {
+            transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.7s ease;
+        }
+
+        .portal-opened .portal-door-left {
+            transform: translateX(-102%);
+        }
+        .portal-opened .portal-door-right {
+            transform: translateX(102%);
+        }
+        .portal-opened .portal-center-seal {
+            transform: scale(1.18);
+            opacity: 0;
+        }
+
+        /* Floating Sparkle Particles */
+        .shimmer-dot {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, #FFF 0%, #DFC082 60%, transparent 100%);
+            opacity: 0.6;
+            pointer-events: none;
+            animation: floatUp 8s infinite ease-in-out;
+        }
+
+        @keyframes floatUp {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+            50% { transform: translateY(-25px) scale(1.3); opacity: 0.75; }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FCF9F6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E8C5BE;
+            border-radius: 9999px;
+            border: 2px solid #FCF9F6;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C5A059;
+        }
+
+        /* Reveal on Scroll Animation */
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Luxury Card Hover Glow */
+        .luxury-card {
+            transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .luxury-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 65px -15px rgba(158, 98, 88, 0.18);
+        }
+    </style>
+</head>
+<body class="selection:bg-rose-blush selection:text-beige-900">
+
+    <!-- ========================================== -->
+    <!-- EFEITO DE ENTRADA ABRINDO O SITE (PORTAL) -->
+    <!-- ========================================== -->
+    <div id="intro-portal" class="fixed inset-0 z-50 flex items-center justify-center overflow-hidden">
+        <!-- Porta Esquerda -->
+        <div class="portal-door-left relative w-1/2 h-full marble-texture border-r border-gold/40 flex items-center justify-end overflow-hidden shadow-2xl">
+            <!-- Veios de Mármore Dourado SVG -->
+            <svg class="absolute inset-0 w-full h-full opacity-25 pointer-events-none" viewBox="0 0 400 800" fill="none">
+                <path d="M-20 120 C120 180, 190 90, 380 280 C290 420, 350 580, 420 750" stroke="url(#goldVein1)" stroke-width="1.5"/>
+                <path d="M50 0 C110 220, 240 310, 400 450" stroke="url(#goldVein1)" stroke-width="0.8"/>
+                <defs>
+                    <linearGradient id="goldVein1" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#C5A059" stop-opacity="0.1"/>
+                        <stop offset="50%" stop-color="#C5A059" stop-opacity="0.9"/>
+                        <stop offset="100%" stop-color="#C88D83" stop-opacity="0.2"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div class="hidden sm:block mr-28 text-right opacity-40 select-none">
+                <p class="font-serif italic text-2xl text-rose-deep">Realçando sua</p>
+            </div>
+        </div>
+
+        <!-- Porta Direita -->
+        <div class="portal-door-right relative w-1/2 h-full marble-texture border-l border-gold/40 flex items-center justify-start overflow-hidden shadow-2xl">
+            <!-- Veios de Mármore Dourado SVG -->
+            <svg class="absolute inset-0 w-full h-full opacity-25 pointer-events-none" viewBox="0 0 400 800" fill="none">
+                <path d="M420 90 C280 210, 180 340, 0 450 C140 590, 220 680, 390 810" stroke="url(#goldVein2)" stroke-width="1.5"/>
+                <defs>
+                    <linearGradient id="goldVein2" x1="1" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#C88D83" stop-opacity="0.2"/>
+                        <stop offset="50%" stop-color="#C5A059" stop-opacity="0.9"/>
+                        <stop offset="100%" stop-color="#C5A059" stop-opacity="0.1"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div class="hidden sm:block ml-28 text-left opacity-40 select-none">
+                <p class="font-serif italic text-2xl text-rose-deep">beleza única</p>
+            </div>
+        </div>
+
+        <!-- Selo Central Adhara Beauty (Inspirado na Logo de Mármore Rosé) -->
+        <div class="portal-center-seal absolute z-10 flex flex-col items-center justify-center px-4 text-center">
+            <div onclick="openLuxurySite()" class="group cursor-pointer relative w-64 h-64 sm:w-72 sm:h-72 rounded-full p-2 bg-gradient-to-tr from-gold-dark via-gold-light to-rose-gold shadow-[0_20px_60px_rgba(158,98,88,0.35)] transition-transform duration-500 hover:scale-105 flex items-center justify-center">
+                <!-- Disco Interno imitando a placa de mármore rosé da logo -->
+                <div class="relative w-full h-full rounded-full overflow-hidden flex flex-col items-center justify-center p-6 border border-white/60"
+                     style="background: radial-gradient(circle at 30% 30%, #FCEEE9 0%, #F2D2C9 48%, #E5B8AD 85%, #D59B8E 100%);">
+                    
+                    <!-- Veios sutis do selo -->
+                    <svg class="absolute inset-0 w-full h-full opacity-50 pointer-events-none" viewBox="0 0 200 200">
+                        <path d="M20,160 Q75,90 95,20" stroke="#C5A059" stroke-width="1.2" fill="none" />
+                        <path d="M40,180 Q110,120 175,65" stroke="#B87B71" stroke-width="0.9" fill="none" />
+                        <circle cx="155" cy="95" r="24" fill="url(#powderGlow)" opacity="0.55"/>
+                        <defs>
+                            <radialGradient id="powderGlow">
+                                <stop offset="0%" stop-color="#C5A059"/>
+                                <stop offset="100%" stop-color="transparent"/>
+                            </radialGradient>
+                        </defs>
+                    </svg>
+
+                    <span class="text-[10px] uppercase tracking-[0.35em] text-beige-800/75 mb-1 font-medium">Itajubá • MG</span>
+                    <h1 class="font-serif text-4xl sm:text-5xl tracking-[0.16em] font-semibold text-rosegold-gradient drop-shadow-sm">
+                        ADHARA
+                    </h1>
+                    <span class="font-serif text-sm sm:text-base tracking-[0.38em] text-beige-800 mt-0.5">
+                        BEAUTY
+                    </span>
+
+                    <div class="mt-5 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-gold/40 text-xs font-medium text-beige-900 shadow-sm group-hover:bg-gold group-hover:text-white transition-colors duration-300">
+                        <i class="ph-fill ph-sparkle text-gold group-hover:text-white"></i>
+                        <span>Toque para Entrar</span>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-4 text-xs uppercase tracking-[0.25em] text-beige-800/70 animate-pulse">
+                Abrindo Experiência Beauty...
+            </p>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- BARRA DE NAVEGAÇÃO CLEAN & LUXUOSA         -->
+    <!-- ========================================== -->
+    <header class="sticky top-0 z-30 bg-ivory/85 backdrop-blur-md border-b border-gold/20 transition-all">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-full p-0.5 bg-gradient-to-tr from-gold to-rose-blush shadow-sm flex items-center justify-center">
+                    <div class="w-full h-full rounded-full bg-beige-50 flex items-center justify-center font-serif font-bold text-lg text-rose-deep tracking-wider">
+                        AF
+                    </div>
+                </div>
+                <div>
+                    <span class="block font-serif text-2xl font-semibold tracking-[0.12em] text-beige-900 leading-none">
+                        ADHARA FREIRE
+                    </span>
+                    <span class="block text-[10px] uppercase tracking-[0.3em] text-rose-gold mt-1">
+                        Beauty • Maquiagem
+                    </span>
+                </div>
+            </a>
+
+            <!-- Links Desktop -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-beige-800">
+                <a href="#sobre" class="hover:text-gold transition-colors">Essência</a>
+                <a href="#servicos" class="hover:text-gold transition-colors">Serviços</a>
+                <a href="#consultoria" class="hover:text-gold transition-colors">Descubra sua Make</a>
+                <a href="#portfolio" class="hover:text-gold transition-colors">Portfólio</a>
+                <a href="#agendamento" class="hover:text-gold transition-colors">Agendar</a>
+            </nav>
+
+            <!-- CTA Buttons -->
+            <div class="flex items-center gap-2.5">
+                <button onclick="replayPortal()" title="Rever efeito de abertura" class="p-2.5 rounded-full border border-gold/30 text-beige-800 hover:bg-rose-soft/60 hover:text-rose-deep transition-all text-sm flex items-center justify-center" aria-label="Rever abertura">
+                    <i class="ph ph-magic-wand text-lg"></i>
+                </button>
+                <a href="https://wa.me/message/46XHUMZFP6UEN1" target="_blank" rel="noopener noreferrer"
+                   class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold-metallic text-white text-xs sm:text-sm font-medium tracking-wide shadow-md hover:shadow-lg hover:scale-[1.02] transition-all">
+                    <i class="ph-fill ph-whatsapp-logo text-base"></i>
+                    <span>Agendar Horário</span>
+                </a>
+                <!-- Botão Menu Mobile -->
+                <button onclick="toggleMobileMenu()" id="mobile-menu-btn" class="md:hidden p-2.5 rounded-full border border-gold/30 text-beige-900 hover:bg-rose-soft/50 transition-all flex items-center justify-center" aria-label="Abrir menu">
+                    <i class="ph ph-list text-xl" id="mobile-menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Responsivo -->
+        <div id="mobile-menu" class="hidden md:hidden bg-ivory/98 backdrop-blur-xl border-b border-gold/30 px-6 py-6 space-y-4 shadow-xl">
+            <div class="flex flex-col space-y-3 text-sm font-medium text-beige-900">
+                <a href="#sobre" onclick="toggleMobileMenu()" class="py-2 border-b border-gold/15 flex items-center justify-between hover:text-gold">
+                    <span>Essência</span>
+                    <i class="ph ph-caret-right text-gold"></i>
+                </a>
+                <a href="#servicos" onclick="toggleMobileMenu()" class="py-2 border-b border-gold/15 flex items-center justify-between hover:text-gold">
+                    <span>Serviços Exclusivos</span>
+                    <i class="ph ph-caret-right text-gold"></i>
+                </a>
+                <a href="#consultoria" onclick="toggleMobileMenu()" class="py-2 border-b border-gold/15 flex items-center justify-between hover:text-gold">
+                    <span>Consultoria de Estilo</span>
+                    <i class="ph ph-caret-right text-gold"></i>
+                </a>
+                <a href="#portfolio" onclick="toggleMobileMenu()" class="py-2 border-b border-gold/15 flex items-center justify-between hover:text-gold">
+                    <span>Portfólio & Inspirações</span>
+                    <i class="ph ph-caret-right text-gold"></i>
+                </a>
+                <a href="#agendamento" onclick="toggleMobileMenu()" class="py-2 flex items-center justify-between hover:text-gold">
+                    <span>Agendar Atendimento</span>
+                    <i class="ph ph-caret-right text-gold"></i>
+                </a>
+            </div>
+            <div class="pt-2">
+                <a href="https://wa.me/message/46XHUMZFP6UEN1" target="_blank" rel="noopener noreferrer"
+                   class="w-full py-3.5 rounded-full bg-gold-metallic text-white text-xs uppercase tracking-[0.2em] font-semibold shadow-md flex items-center justify-center gap-2">
+                    <i class="ph-fill ph-whatsapp-logo text-base"></i>
+                    <span>Falar no WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- HERO SECTION                               -->
+    <!-- ========================================== -->
+    <section class="relative overflow-hidden marble-texture pt-8 pb-16 sm:pt-14 sm:pb-24 border-b border-gold/20">
+        <!-- Partículas Douradas Decorativas -->
+        <div class="shimmer-dot w-3 h-3 top-16 left-10" style="animation-delay: 0s;"></div>
+        <div class="shimmer-dot w-4 h-4 top-1/3 right-12" style="animation-delay: 2s;"></div>
+        <div class="shimmer-dot w-2.5 h-2.5 bottom-16 left-1/3" style="animation-delay: 4s;"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                
+                <!-- Coluna de Texto (Esquerda) -->
+                <div class="lg:col-span-7 text-center lg:text-left z-10">
+                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/90 border border-gold/35 shadow-sm mb-6">
+                        <i class="ph-fill ph-map-pin text-gold text-sm"></i>
+                        <span class="text-[11px] font-medium uppercase tracking-[0.22em] text-beige-800">
+                            Itajubá, MG • Atendimento Exclusivo
+                        </span>
+                    </div>
+
+                    <h2 class="font-serif text-4xl sm:text-6xl lg:text-[64px] font-normal text-beige-900 leading-[1.08] mb-6">
+                        A arte de realçar a sua <span class="italic font-semibold text-rosegold-gradient">beleza natural</span> com sofisticação.
+                    </h2>
+
+                    <p class="text-beige-800/85 text-sm sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 font-light">
+                        Maquiagem Social, produções inesquecíveis para Eventos e Cursos de Automaquiagem pensados para iluminar cada traço único do seu rosto com leveza e alta durabilidade.
+                    </p>
+
+                    <!-- Botões Principais -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 sm:gap-4">
+                        <a href="https://wa.me/message/46XHUMZFP6UEN1" target="_blank" rel="noopener noreferrer"
+                           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gold-metallic text-white font-medium text-xs sm:text-sm tracking-wider uppercase shadow-[0_10px_30px_rgba(197,160,89,0.35)] hover:shadow-[0_15px_35px_rgba(197,160,89,0.5)] hover:-translate-y-0.5 transition-all">
+                            <i class="ph-fill ph-calendar-check text-xl"></i>
+                            <span>Agende seu Horário</span>
+                        </a>
+                        <a href="https://www.instagram.com/_adharafreirebeauty/" target="_blank" rel="noopener noreferrer"
+                           class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full bg-white/90 hover:bg-white text-beige-900 border border-gold/40 font-medium text-xs sm:text-sm tracking-wider uppercase shadow-sm hover:border-gold transition-all">
+                            <i class="ph ph-instagram-logo text-xl text-rose-deep"></i>
+                            <span>@_adharafreirebeauty</span>
+                        </a>
+                    </div>
+
+                    <!-- Selos de Destaque -->
+                    <div class="mt-10 sm:mt-12 pt-8 border-t border-gold/25 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-xl mx-auto lg:mx-0">
+                        <div class="bg-white/60 sm:bg-transparent p-3.5 sm:p-0 rounded-2xl border border-gold/20 sm:border-none">
+                            <p class="font-serif text-2xl sm:text-3xl font-semibold text-gold-dark">Glow & Pele</p>
+                            <p class="text-xs text-beige-800/75 mt-0.5">Acabamento blindado e confortável</p>
+                        </div>
+                        <div class="bg-white/60 sm:bg-transparent p-3.5 sm:p-0 rounded-2xl border border-gold/20 sm:border-y-0 sm:border-x sm:border-gold/25 sm:px-4">
+                            <p class="font-serif text-2xl sm:text-3xl font-semibold text-rose-deep">Cursos VIP</p>
+                            <p class="text-xs text-beige-800/75 mt-0.5">Prática guiada passo a passo</p>
+                        </div>
+                        <div class="bg-white/60 sm:bg-transparent p-3.5 sm:p-0 rounded-2xl border border-gold/20 sm:border-none">
+                            <p class="font-serif text-2xl sm:text-3xl font-semibold text-gold-dark">Eventos</p>
+                            <p class="text-xs text-beige-800/75 mt-0.5">Formandas, madrinhas e festas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna Visual (Direita - Medallion & Moldura Arqueada) -->
+                <div class="lg:col-span-5 flex justify-center mt-4 lg:mt-0">
+                    <div class="relative w-full max-w-sm sm:max-w-md">
+                        <!-- Moldura Dourada Deslocada -->
+                        <div class="absolute -inset-2.5 sm:-inset-3 rounded-t-full rounded-b-[48px] border border-gold/50 translate-x-2.5 translate-y-2.5 sm:translate-x-3 sm:translate-y-3 pointer-events-none"></div>
+
+                        <!-- Card Principal Inspirado na Identidade Visual -->
+                        <div class="relative rounded-t-full rounded-b-[44px] bg-white p-3.5 sm:p-4 shadow-[0_25px_60px_rgba(158,98,88,0.18)] border border-rose-blush/50 overflow-hidden">
+                            <div class="relative min-h-[410px] sm:min-h-[470px] rounded-t-full rounded-b-[34px] overflow-hidden flex flex-col justify-between p-6 sm:p-8 text-center"
+                                 style="background: radial-gradient(circle at 25% 20%, #FFFDFB 0%, #F7E4DF 45%, #E8C5BE 85%, #D9A79D 100%);">
+                                
+                                <!-- Arte SVG de Pincel e Brilho Dourado -->
+                                <svg class="absolute inset-0 w-full h-full opacity-45 pointer-events-none" viewBox="0 0 400 500" fill="none">
+                                    <path d="M30 420 Q180 260 220 40" stroke="#C5A059" stroke-width="1.5" />
+                                    <path d="M80 480 Q210 340 360 190" stroke="#9E6258" stroke-width="1" />
+                                    <circle cx="310" cy="140" r="65" fill="url(#roseDust)" />
+                                    <defs>
+                                        <radialGradient id="roseDust">
+                                            <stop offset="0%" stop-color="#C5A059" stop-opacity="0.6"/>
+                                            <stop offset="100%" stop-color="#C5A059" stop-opacity="0"/>
+                                        </radialGradient>
+                                    </defs>
+                                </svg>
+
+                                <!-- Topo do Arco -->
+                                <div class="relative z-10 pt-6 sm:pt-8">
+                                    <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/75 backdrop-blur-sm text-[10px] tracking-[0.3em] uppercase text-beige-900 border border-gold/30">
+                                        <i class="ph-fill ph-sparkle text-gold"></i> Alta Perfumaria & Make
+                                    </span>
+                                </div>
+
+                                <!-- Centro: Brasão Adhara Beauty -->
+                                <div class="relative z-10 my-6 py-7 px-5 rounded-3xl bg-white/70 backdrop-blur-md border border-white/85 shadow-sm">
+                                    <div class="w-12 h-0.5 bg-gold mx-auto mb-4"></div>
+                                    <h3 class="font-serif text-4xl sm:text-5xl tracking-[0.18em] font-semibold text-rosegold-gradient">
+                                        ADHARA
+                                    </h3>
+                                    <p class="font-serif text-sm sm:text-base tracking-[0.42em] text-beige-800 mt-1">
+                                        BEAUTY
+                                    </p>
+                                    <p class="font-serif italic text-rose-deep text-base sm:text-lg mt-4 leading-relaxed">
+                                        “Maquiagem que abraça sua identidade e eterniza seus melhores momentos.”
+                                    </p>
+                                    <div class="w-12 h-0.5 bg-gold mx-auto mt-4"></div>
+                                </div>
+
+                                <!-- Rodapé do Card -->
+                                <div class="relative z-10 flex items-center justify-between bg-white/95 backdrop-blur-md px-5 py-3.5 rounded-2xl border border-gold/30 shadow-sm">
+                                    <div class="text-left">
+                                        <p class="text-xs font-semibold text-beige-900">Adhara Freire</p>
+                                        <p class="text-[11px] text-beige-800/70">Beauty Artist • Itajubá, MG</p>
+                                    </div>
+                                    <a href="https://wa.me/message/46XHUMZFP6UEN1" target="_blank" rel="noopener noreferrer"
+                                       class="w-10 h-10 rounded-full bg-rosegold-metallic text-white flex items-center justify-center shadow hover:scale-105 transition-transform"
+                                       aria-label="Conversar no WhatsApp">
+                                        <i class="ph-fill ph-chat-circle-text text-lg"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- FAIXA DE DESTAQUES (MARQUEE CLEAN)         -->
+    <!-- ========================================== -->
+    <div class="bg-beige-50 border-b border-gold/20 py-4">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-around gap-3 sm:gap-4 text-[11px] sm:text-xs uppercase tracking-[0.22em] text-beige-800/85">
+            <span class="flex items-center justify-center gap-2"><i class="ph-fill ph-sparkle text-gold"></i> Maquiagem Social</span>
+            <span class="flex items-center justify-center gap-2"><i class="ph-fill ph-sparkle text-rose-gold"></i> Cursos de Automaquiagem</span>
+            <span class="flex items-center justify-center gap-2"><i class="ph-fill ph-sparkle text-gold"></i> Produção para Eventos</span>
+            <span class="flex items-center justify-center gap-2"><i class="ph-fill ph-sparkle text-rose-gold"></i> Cuidados Femininos</span>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- SEÇÃO: SERVIÇOS EXCLUSIVOS                 -->
+    <!-- ========================================== -->
+    <section id="servicos" class="py-16 sm:py-28 bg-ivory relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Cabeçalho da Seção -->
+            <div class="text-center max-w-2xl mx-auto mb-14 sm:mb-16 reveal-item">
+                <span class="text-xs uppercase tracking-[0.3em] text-rose-deep font-semibold block mb-2">
+                    Menu de Experiências
+                </span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-beige-900 font-normal">
+                    Serviços pensados para <span class="italic text-gold-gradient font-semibold">você brilhar</span>
+                </h2>
+                <div class="w-20 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-4"></div>
+                <p class="text-sm sm:text-base text-beige-800/75 mt-4 font-light">
+                    Técnicas modernas, produtos selecionados de alta durabilidade e atendimento acolhedor em Itajubá, MG.
+                </p>
+            </div>
+
+            <!-- Grid de 3 Serviços Principais da Bio -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                
+                <!-- Serviço 1: Maquiagem Social -->
+                <div class="reveal-item luxury-card group rounded-3xl bg-white p-7 sm:p-8 border border-gold/25 shadow-[0_12px_40px_rgba(92,73,56,0.05)] flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-rose-soft/50 rounded-bl-full -z-0 transition-transform duration-500 group-hover:scale-125"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-2xl bg-beige-50 border border-gold/40 flex items-center justify-center text-rose-deep mb-6 shadow-sm">
+                            <i class="ph-duotone ph-magic-wand text-3xl text-gold-dark"></i>
+                        </div>
+                        <span class="text-[11px] uppercase tracking-[0.25em] text-rose-gold font-semibold">Realce & Glow</span>
+                        <h3 class="font-serif text-3xl text-beige-900 font-semibold mt-1 mb-3">Maquiagem Social</h3>
+                        <p class="text-sm text-beige-800/80 leading-relaxed mb-6">
+                            Produção personalizada para valorizar seus traços com leveza ou sofisticação. Ideal para jantares, ensaios fotográficos, aniversários e ocasiões especiais.
+                        </p>
+
+                        <ul class="space-y-2.5 text-xs text-beige-800 mb-8 border-t border-beige-100 pt-5">
+                            <li class="flex items-center gap-2.5"><i class="ph-fill ph-check-circle text-gold text-sm shrink-0"></i> <span>Preparação de pele luminosa e resistente</span></li>
+                            <li class="flex items-center gap-2.5"><i class="ph-fill ph-check-circle text-gold text-sm shrink-0"></i> <span>Visagismo adaptado ao seu estilo pessoal</span></li>
+                            <li class="flex items-center gap-2.5"><i class="ph-fill ph-check-circle text-gold text-sm shrink-0"></i> <span>Aplicação de cílios postiços com conforto</span></li>
+                            <li class="flex items-center gap-2.5"><i class="ph-fill ph-check-circle text-gold text-sm shrink-0"></i> <span>Do acabamento Glow Clássico ao Olhar Marcante</span></li>
+                        </ul>
+                    </div>
+
+                    <button onclick="openBookingWithService('Maquiagem Social')"
+                            class="relative z-10 w-full py-3.5 px-5 rounded-full bg-beige-50 hover:bg-gold-metallic text-beige-900 hover:text-white border border-gold/40 text-xs uppercase tracking-[0.2em] font-semibold transition-all flex items-center justify-center gap-2">
+                        <span>Reservar Maquiagem Social</span>
+                        <i class="ph ph-arrow-up-right text-base"></i>
+                    </button>
+                </div>
+
+                <!-- Serviço 2: Eventos Especiais (Destaque Central) -->
+                <div class="reveal-item luxury-card group rounded-3xl marble-texture p-7 sm:p-8 border-2 border-gold/50 shadow-[0_20px_50px_rgba(197,160,89,0.16)] flex flex-col justify-between relative overflow-hidden">
+                    <div class="inline-flex items-center gap-1.5 self-start px-3.5 py-1 rounded-full bg-gold-metallic text-white text-[10px] uppercase tracking-[0.25em] font-semibold mb-4 shadow-sm">
+                        <i class="ph-fill ph-star"></i>
+                        <span>Mais Procurado</span>
+                    </div>
+
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-white border border-gold/40 flex items-center justify-center mb-6 shadow-sm">
+                            <i class="ph-duotone ph-crown-simple text-3xl text-rose-deep"></i>
+                        </div>
+                        <span class="text-[11px] uppercase tracking-[0.25em] text-beige-800 font-semibold">Alta Durabilidade</span>
+                        <h3 class="font-serif text-3xl text-beige-900 font-semibold mt-1 mb-3">Produção para Eventos</h3>
+                        <p class="text-sm text-beige-800/85 leading-relaxed mb-6">
+                            Maquiagem de longa duração pensada para resistir a lágrimas de emoção, abraços, flashes e horas de festa sem perder o viço impecável.
+                        </p>
+
+                        <ul class="space-y-2.5 text-xs text-beige-900 mb-8 border-t border-gold/25 pt-5">
+                            <li class="flex items-center gap-2.5"><i class="ph-fill ph-sparkle text-rose-deep text-sm shrink-0"></i> <span>Especial para Formandas, Madrinhas e Convidadas</span></li>
+                            <li class="flex items-center gap-2.5"><i class="ph-fill ph-sparkle text-rose-deep text-sm shrink-0"></i> <span>Técnica de pele blindada e acabamento HD</span></li>
+                            <li class="flex items-center gap-2.5"><i class="ph-fill ph-sparkle text-rose-deep text-sm shrink-0"></i> <span>Harmonia completa com vestido e acessórios</span></li>
+                            <li class="flex items-center gap-2.5"><i class="ph-fill ph-sparkle text-rose-deep text-sm shrink-0"></i> <span>Atendimento exclusivo com hora marcada</span></li>
+                        </ul>
+                    </div>
+
+                    <button onclick="openBookingWithService('Produção para Eventos')"
+                            class="w-full py-3.5 px-5 rounded-full bg-gold-metallic text-white text-xs uppercase tracking-[0.2em] font-semibold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
+                        <span>Agendar para meu Evento</span>
+                        <i class="ph ph-arrow-up-right text-base"></i>
+                    </button>
+                </div>
+
+                <!-- Serviço 3: Cursos & Cuidados Femininos -->
+                <div class="reveal-item luxury-card group rounded-3xl bg-white p-7 sm:p-8 border border-gold/25 shadow-[0_12px_40px_rgba(92,73,56,0.05)] flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-beige-100/70 rounded-bl-full -z-0 transition-transform duration-500 group-hover:scale-125"></div>
+
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-2xl bg-beige-50 border border-gold/40 flex items-center justify-center mb-6 shadow-sm">
+                            <i class="ph-duotone ph-graduation-cap text-3xl text-gold-dark"></i>
+                        </div>
+                        <span class="text-[11px] uppercase tracking-[0.25em] text-rose-gold font-semibold">Aprendizado Prático</span>
+                        <h3 class="font-serif text-3xl text-beige-900 font-semibold mt-1 mb-3">Cursos Exclusivos</h3>
+                        <p class="text-sm text-beige-800/80 leading-relaxed mb-6">
+                            Aprenda a dominar seus próprios produtos e pincéis. Do básico ao olhar elaborado, com orientações de cuidados femininos e preparação pré-make.
+                        </p>
+
+                        <ul class="space-y-2.5 text-xs text-beige-800 mb-8 border-t border-beige-100 pt-5">
+                            <li class="flex items-center gap-2.5"><i class="ph-fill ph-check-circle text-gold text-sm shrink-0"></i> <span>Curso de Automaquiagem VIP ou em dupla</span></li>
+                            <li class="flex items-center gap-2.5"><i class="ph-fill ph-check-circle text-gold text-sm shrink-0"></i> <span>Análise personalizada da sua nécessaire</span></li>
+                            <li class="flex items-center gap-2.5"><i class="ph-fill ph-check-circle text-gold text-sm shrink-0"></i> <span>Escolha correta do tom de base e contorno</span></li>
+                            <li class="flex items-center gap-2.5"><i class="ph-fill ph-check-circle text-gold text-sm shrink-0"></i> <span>Make prática para o dia e transformação noite</span></li>
+                        </ul>
+                    </div>
+
+                    <button onclick="openBookingWithService('Curso de Automaquiagem / VIP')"
+                            class="relative z-10 w-full py-3.5 px-5 rounded-full bg-beige-50 hover:bg-gold-metallic text-beige-900 hover:text-white border border-gold/40 text-xs uppercase tracking-[0.2em] font-semibold transition-all flex items-center justify-center gap-2">
+                        <span>Consultar Vagas do Curso</span>
+                        <i class="ph ph-arrow-up-right text-base"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- CONSULTORIA INTERATIVA: DESCUBRA SUA MAKE  -->
+    <!-- ========================================== -->
+    <section id="consultoria" class="py-16 sm:py-20 bg-beige-50/80 border-y border-gold/20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-[32px] sm:rounded-[36px] bg-white p-6 sm:p-12 border border-gold/30 shadow-[0_20px_60px_rgba(158,98,88,0.08)]">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+                    
+                    <div class="lg:col-span-5">
+                        <span class="inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.25em] text-rose-deep font-semibold mb-2">
+                            <i class="ph-fill ph-sparkle text-gold"></i> Consultoria Personalizada
+                        </span>
+                        <h3 class="font-serif text-3xl sm:text-4xl text-beige-900 leading-tight mb-4">
+                            Qual estilo de produção combina com o seu momento?
+                        </h3>
+                        <p class="text-sm text-beige-800/80 leading-relaxed mb-6">
+                            Selecione o acabamento que você mais deseja abaixo para visualizar a recomendação da <strong>Adhara Beauty</strong> e enviar sua preferência diretamente no agendamento.
+                        </p>
+
+                        <!-- Botões de Filtro de Estilo (Sem Emojis, com Ícones Elegantes) -->
+                        <div class="space-y-3" id="style-selector">
+                            <button onclick="selectBeautyStyle('glow')" id="btn-glow"
+                                    class="style-btn w-full text-left px-4 sm:px-5 py-3.5 rounded-2xl border border-gold bg-rose-soft/40 text-beige-900 flex items-center justify-between transition-all">
+                                <span class="flex items-center gap-3 font-medium text-xs sm:text-sm">
+                                    <i class="ph-duotone ph-sun-horizon text-lg text-gold-dark"></i>
+                                    <span>Glow Natural & Iluminado</span>
+                                </span>
+                                <i class="state-icon ph-fill ph-check-circle text-gold text-lg shrink-0"></i>
+                            </button>
+                            <button onclick="selectBeautyStyle('redlips')" id="btn-redlips"
+                                    class="style-btn w-full text-left px-4 sm:px-5 py-3.5 rounded-2xl border border-beige-200 hover:border-gold/50 text-beige-800 flex items-center justify-between transition-all">
+                                <span class="flex items-center gap-3 font-medium text-xs sm:text-sm">
+                                    <i class="ph-duotone ph-heart text-lg text-rose-deep"></i>
+                                    <span>Clássica com Lábios Marcantes</span>
+                                </span>
+                                <i class="state-icon ph ph-circle text-beige-800/40 text-lg shrink-0"></i>
+                            </button>
+                            <button onclick="selectBeautyStyle('glam')" id="btn-glam"
+                                    class="style-btn w-full text-left px-4 sm:px-5 py-3.5 rounded-2xl border border-beige-200 hover:border-gold/50 text-beige-800 flex items-center justify-between transition-all">
+                                <span class="flex items-center gap-3 font-medium text-xs sm:text-sm">
+                                    <i class="ph-duotone ph-crown text-lg text-gold-dark"></i>
+                                    <span>Olhar Glam Dourado & Delineado</span>
+                                </span>
+                                <i class="state-icon ph ph-circle text-beige-800/40 text-lg shrink-0"></i>
+                            </button>
+                            <button onclick="selectBeautyStyle('curso')" id="btn-curso"
+                                    class="style-btn w-full text-left px-4 sm:px-5 py-3.5 rounded-2xl border border-beige-200 hover:border-gold/50 text-beige-800 flex items-center justify-between transition-all">
+                                <span class="flex items-center gap-3 font-medium text-xs sm:text-sm">
+                                    <i class="ph-duotone ph-book-open-text text-lg text-rose-deep"></i>
+                                    <span>Quero Aprender a me Maquiar</span>
+                                </span>
+                                <i class="state-icon ph ph-circle text-beige-800/40 text-lg shrink-0"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card de Resultado Dinâmico -->
+                    <div class="lg:col-span-7">
+                        <div id="style-result-card" class="rounded-3xl marble-texture p-6 sm:p-9 border border-gold/40 relative overflow-hidden transition-all duration-300">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                                <span id="style-badge" class="px-3.5 py-1 rounded-full bg-white/85 border border-gold/30 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-rose-deep font-semibold">
+                                    Favorito das Clientes
+                                </span>
+                                <span id="style-time" class="text-xs text-beige-800/75 flex items-center gap-1.5">
+                                    <i class="ph ph-clock text-gold-dark"></i> Atendimento Exclusivo
+                                </span>
+                            </div>
+
+                            <h4 id="style-title" class="font-serif text-2xl sm:text-4xl text-beige-900 font-semibold mb-3">
+                                Beleza Radiante & Pele Viçosa
+                            </h4>
+
+                            <p id="style-desc" class="text-xs sm:text-sm text-beige-800/85 leading-relaxed mb-6">
+                                Perfeita para quem ama parecer naturalmente deslumbrante. Esfumado suave em tons terrosos e rosados, pele acetinada com pontos de luz dourado champagne e lábios em tom nude rosé glossy.
+                            </p>
+
+                            <!-- Paleta Sugerida da Produção -->
+                            <div class="mb-7">
+                                <p class="text-[11px] uppercase tracking-[0.2em] text-beige-800/70 mb-2.5">Harmonia de Tons da Produção:</p>
+                                <div id="style-palette" class="flex flex-wrap items-center gap-2.5">
+                                    <div class="flex items-center gap-2 bg-white/85 px-3 py-1.5 rounded-full border border-gold/25 text-xs">
+                                        <span class="w-3.5 h-3.5 rounded-full bg-[#E8C5BE] border border-white shadow-sm"></span> Rosé Quartzo
+                                    </div>
+                                    <div class="flex items-center gap-2 bg-white/85 px-3 py-1.5 rounded-full border border-gold/25 text-xs">
+                                        <span class="w-3.5 h-3.5 rounded-full bg-[#DFC082] border border-white shadow-sm"></span> Champagne Gold
+                                    </div>
+                                    <div class="flex items-center gap-2 bg-white/85 px-3 py-1.5 rounded-full border border-gold/25 text-xs">
+                                        <span class="w-3.5 h-3.5 rounded-full bg-[#C88D83] border border-white shadow-sm"></span> Nude Pêssego
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button id="style-cta-btn" onclick="openBookingWithService('Maquiagem Glow Natural & Iluminado')"
+                                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-rosegold-metallic text-white text-xs uppercase tracking-[0.2em] font-semibold shadow-md hover:scale-[1.02] transition-all">
+                                <i class="ph-fill ph-whatsapp-logo text-lg"></i>
+                                <span>Agendar este Estilo</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- PORTFÓLIO & ESTILOS (INSPIRADO NO FEED)    -->
+    <!-- ========================================== -->
+    <section id="portfolio" class="py-16 sm:py-28 bg-ivory">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-14 gap-6 reveal-item">
+                <div>
+                    <span class="text-xs uppercase tracking-[0.3em] text-rose-deep font-semibold block mb-2">
+                        Assinatura Visual
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-beige-900">
+                        Inspirações do nosso <span class="italic text-rosegold-gradient font-semibold">Portfólio</span>
+                    </h2>
+                </div>
+                <a href="https://www.instagram.com/_adharafreirebeauty/" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-2 self-start md:self-auto px-5 py-2.5 rounded-full bg-beige-100/80 hover:bg-rose-soft text-beige-900 text-xs uppercase tracking-[0.2em] font-medium border border-gold/30 transition-all">
+                    <i class="ph ph-instagram-logo text-base text-rose-deep"></i>
+                    <span>Ver Instagram @_adharafreirebeauty</span>
+                </a>
+            </div>
+
+            <!-- Galeria de Cards das Produções Reais do Feed -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                
+                <!-- Card Look 1 -->
+                <div class="reveal-item luxury-card group rounded-3xl bg-white p-6 border border-gold/25 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="h-56 rounded-2xl mb-5 relative overflow-hidden flex items-center justify-center p-6"
+                             style="background: radial-gradient(circle at 20% 20%, #FBF2EE 0%, #E8C5BE 50%, #9E4747 100%);">
+                            <svg class="absolute inset-0 w-full h-full opacity-25 pointer-events-none" viewBox="0 0 200 200">
+                                <circle cx="160" cy="40" r="50" stroke="#FFF" stroke-width="0.7" fill="none"/>
+                                <path d="M10 170 Q90 110 190 30" stroke="#C5A059" stroke-width="1" fill="none"/>
+                            </svg>
+                            <div class="relative z-10 text-center bg-white/90 backdrop-blur-md px-6 py-4 rounded-2xl border border-gold/30 shadow-sm">
+                                <span class="text-[10px] uppercase tracking-[0.25em] text-rose-deep block">Produção Social</span>
+                                <p class="font-serif text-2xl text-beige-900 font-semibold mt-0.5">Red Lips & Glow</p>
+                            </div>
+                        </div>
+                        <h3 class="font-serif text-2xl font-semibold text-beige-900">Clássico Lábio Vermelho</h3>
+                        <p class="text-xs text-beige-800/80 mt-2 leading-relaxed">
+                            Pele iluminada com blush pêssego suave, olhos delicadamente esfumados e batom vermelho aveludado para um visual marcante e atemporal.
+                        </p>
+                    </div>
+                    <div class="mt-5 pt-4 border-t border-beige-100 flex items-center justify-between text-xs text-rose-deep font-medium">
+                        <span>Maquiagem Social</span>
+                        <button onclick="openBookingWithService('Make Clássica Lábio Vermelho')" class="hover:text-gold-dark flex items-center gap-1 transition-colors">
+                            <span>Solicitar este estilo</span> <i class="ph ph-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card Look 2 -->
+                <div class="reveal-item luxury-card group rounded-3xl bg-white p-6 border border-gold/25 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="h-56 rounded-2xl mb-5 relative overflow-hidden flex items-center justify-center p-6"
+                             style="background: radial-gradient(circle at 20% 20%, #FCF8F2 0%, #DFC082 55%, #5C4938 100%);">
+                            <svg class="absolute inset-0 w-full h-full opacity-25 pointer-events-none" viewBox="0 0 200 200">
+                                <circle cx="40" cy="160" r="55" stroke="#FFF" stroke-width="0.7" fill="none"/>
+                                <path d="M20 30 Q110 90 180 170" stroke="#FFF" stroke-width="1" fill="none"/>
+                            </svg>
+                            <div class="relative z-10 text-center bg-white/90 backdrop-blur-md px-6 py-4 rounded-2xl border border-gold/30 shadow-sm">
+                                <span class="text-[10px] uppercase tracking-[0.25em] text-gold-dark block">Olhar Poderoso</span>
+                                <p class="font-serif text-2xl text-beige-900 font-semibold mt-0.5">Smokey & Delineado</p>
+                            </div>
+                        </div>
+                        <h3 class="font-serif text-2xl font-semibold text-beige-900">Esfumado Glam para Festas</h3>
+                        <p class="text-xs text-beige-800/80 mt-2 leading-relaxed">
+                            Olhar expressivo com delineado preciso, cílios volumosos na medida certa e pele contornada com iluminador dourado champagne.
+                        </p>
+                    </div>
+                    <div class="mt-5 pt-4 border-t border-beige-100 flex items-center justify-between text-xs text-rose-deep font-medium">
+                        <span>Eventos & Festas</span>
+                        <button onclick="openBookingWithService('Make Esfumado Glam para Festa')" class="hover:text-gold-dark flex items-center gap-1 transition-colors">
+                            <span>Solicitar este estilo</span> <i class="ph ph-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card Look 3 -->
+                <div class="reveal-item luxury-card group rounded-3xl bg-white p-6 border border-gold/25 shadow-sm flex flex-col justify-between sm:col-span-2 lg:col-span-1">
+                    <div>
+                        <div class="h-56 rounded-2xl mb-5 relative overflow-hidden flex items-center justify-center p-6"
+                             style="background: radial-gradient(circle at 20% 20%, #FDF9F7 0%, #F4E3DF 50%, #C88D83 100%);">
+                            <svg class="absolute inset-0 w-full h-full opacity-30 pointer-events-none" viewBox="0 0 200 200">
+                                <circle cx="100" cy="100" r="70" stroke="#C5A059" stroke-width="0.7" fill="none"/>
+                            </svg>
+                            <div class="relative z-10 text-center bg-white/90 backdrop-blur-md px-6 py-4 rounded-2xl border border-gold/30 shadow-sm">
+                                <span class="text-[10px] uppercase tracking-[0.25em] text-rose-deep block">Soft Beauty</span>
+                                <p class="font-serif text-2xl text-beige-900 font-semibold mt-0.5">Monocromática Rosé</p>
+                            </div>
+                        </div>
+                        <h3 class="font-serif text-2xl font-semibold text-beige-900">Fresh Rosé & Glossy Lips</h3>
+                        <p class="text-xs text-beige-800/80 mt-2 leading-relaxed">
+                            Harmonia suave entre pálpebras acetinadas em tom rosé, sobrancelhas alinhadas com naturalidade e lábios hidratados com efeito espelhado.
+                        </p>
+                    </div>
+                    <div class="mt-5 pt-4 border-t border-beige-100 flex items-center justify-between text-xs text-rose-deep font-medium">
+                        <span>Dia & Noite</span>
+                        <button onclick="openBookingWithService('Make Fresh Rosé & Glossy Lips')" class="hover:text-gold-dark flex items-center gap-1 transition-colors">
+                            <span>Solicitar este estilo</span> <i class="ph ph-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SOBRE ADHARA FREIRE & DIFERENCIAIS         -->
+    <!-- ========================================== -->
+    <section id="sobre" class="py-16 sm:py-24 marble-texture border-t border-gold/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                
+                <div class="lg:col-span-5 reveal-item">
+                    <div class="rounded-[36px] bg-white p-7 sm:p-9 border border-gold/40 shadow-lg text-center relative">
+                        <div class="w-28 h-28 mx-auto rounded-full p-1 bg-gradient-to-tr from-gold via-rose-blush to-gold-light shadow-md mb-5">
+                            <div class="w-full h-full rounded-full marble-texture flex flex-col items-center justify-center border border-white">
+                                <span class="font-serif text-2xl font-bold text-rosegold-gradient tracking-widest">ADHARA</span>
+                                <span class="text-[9px] tracking-[0.3em] uppercase text-beige-800">BEAUTY</span>
+                            </div>
+                        </div>
+                        <h3 class="font-serif text-3xl text-beige-900 font-semibold">Adhara Freire</h3>
+                        <p class="text-xs uppercase tracking-[0.25em] text-rose-gold mt-1 mb-5">
+                            Maquiadora Profissional • Itajubá, MG
+                        </p>
+                        <p class="text-beige-800/85 italic font-serif text-lg sm:text-xl leading-relaxed mb-6">
+                            “Acredito que a maquiagem perfeita não transforma você em outra pessoa, mas revela a sua versão mais confiante, radiante e inesquecível.”
+                        </p>
+                        <div class="flex flex-wrap items-center justify-center gap-3">
+                            <a href="https://www.instagram.com/_adharafreirebeauty/" target="_blank" rel="noopener noreferrer"
+                               class="px-4 py-2.5 rounded-full bg-beige-50 hover:bg-rose-soft text-xs font-medium text-beige-900 border border-gold/30 transition-all inline-flex items-center gap-1.5">
+                                <i class="ph ph-instagram-logo text-rose-deep text-base"></i>
+                                <span>Seguir no Instagram</span>
+                            </a>
+                            <a href="https://wa.me/message/46XHUMZFP6UEN1" target="_blank" rel="noopener noreferrer"
+                               class="px-5 py-2.5 rounded-full bg-gold-metallic text-xs font-medium text-white shadow-sm transition-all inline-flex items-center gap-1.5">
+                                <i class="ph-fill ph-whatsapp-logo text-base"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 reveal-item">
+                    <span class="text-xs uppercase tracking-[0.3em] text-rose-deep font-semibold block mb-2">
+                        Cuidado em cada Detalhe
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-beige-900 mb-5">
+                        Por que viver a experiência <span class="italic text-gold-gradient font-semibold">Adhara Beauty?</span>
+                    </h2>
+                    <p class="text-sm sm:text-base text-beige-800/80 leading-relaxed mb-8">
+                        Cada atendimento é planejado de forma exclusiva. Desde a preparação cuidadosa da pele até o toque final de iluminação, tudo respeita o seu tipo de pele, formato de rosto e ocasião.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                        <div class="bg-white/90 backdrop-blur-sm p-5 rounded-2xl border border-gold/25 shadow-sm">
+                            <i class="ph-duotone ph-drop-half-bottom text-2xl text-gold-dark mb-2"></i>
+                            <h4 class="font-serif text-xl font-semibold text-beige-900">Pele Confortável & Duradoura</h4>
+                            <p class="text-xs text-beige-800/75 mt-1 leading-relaxed">Produtos selecionados de alta performance que garantem cobertura impecável sem pesar.</p>
+                        </div>
+                        <div class="bg-white/90 backdrop-blur-sm p-5 rounded-2xl border border-gold/25 shadow-sm">
+                            <i class="ph-duotone ph-shield-check text-2xl text-rose-deep mb-2"></i>
+                            <h4 class="font-serif text-xl font-semibold text-beige-900">Biossegurança & Higiene</h4>
+                            <p class="text-xs text-beige-800/75 mt-1 leading-relaxed">Pincéis, esponjas e materiais rigorosamente higienizados a cada atendimento individual.</p>
+                        </div>
+                        <div class="bg-white/90 backdrop-blur-sm p-5 rounded-2xl border border-gold/25 shadow-sm">
+                            <i class="ph-duotone ph-sparkle text-2xl text-rose-deep mb-2"></i>
+                            <h4 class="font-serif text-xl font-semibold text-beige-900">Cuidados Femininos</h4>
+                            <p class="text-xs text-beige-800/75 mt-1 leading-relaxed">Orientações reais de hidratação e autocuidado para manter sua pele saudável todos os dias.</p>
+                        </div>
+                        <div class="bg-white/90 backdrop-blur-sm p-5 rounded-2xl border border-gold/25 shadow-sm">
+                            <i class="ph-duotone ph-map-pin-line text-2xl text-gold-dark mb-2"></i>
+                            <h4 class="font-serif text-xl font-semibold text-beige-900">Itajubá, Minas Gerais</h4>
+                            <p class="text-xs text-beige-800/75 mt-1 leading-relaxed">Horários planejados mediante agendamento prévio para sua total tranquilidade e pontualidade.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SEÇÃO DE AGENDAMENTO RÁPIDO                -->
+    <!-- ========================================== -->
+    <section id="agendamento" class="py-16 sm:py-28 bg-ivory">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-[32px] sm:rounded-[40px] bg-white p-6 sm:p-14 border-2 border-gold/35 shadow-[0_25px_70px_rgba(197,160,89,0.14)] relative overflow-hidden">
+                
+                <div class="text-center max-w-xl mx-auto mb-8 sm:mb-10">
+                    <span class="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-rose-soft/70 text-rose-deep text-[11px] uppercase tracking-[0.25em] font-semibold mb-3">
+                        <i class="ph-fill ph-calendar-blank"></i> Agenda Aberta • Itajubá, MG
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-beige-900">
+                        Agende seu <span class="italic text-rosegold-gradient font-semibold">Horário</span>
+                    </h2>
+                    <p class="text-xs sm:text-sm text-beige-800/75 mt-2">
+                        Personalize sua solicitação abaixo ou acesse diretamente o link oficial do WhatsApp da Adhara Freire.
+                    </p>
+                </div>
+
+                <form onsubmit="handleDirectBooking(event)" class="space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-beige-800 mb-2 font-medium">Seu Nome</label>
+                            <input type="text" id="client-name" placeholder="Ex: Mariana Silva" required
+                                   class="w-full px-4 py-3.5 rounded-2xl bg-beige-50/70 border border-gold/30 text-sm text-beige-900 focus:outline-none focus:border-gold">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-beige-800 mb-2 font-medium">Serviço Desejado</label>
+                            <select id="client-service"
+                                    class="w-full px-4 py-3.5 rounded-2xl bg-beige-50/70 border border-gold/30 text-sm text-beige-900 focus:outline-none focus:border-gold">
+                                <option value="Maquiagem Social">Maquiagem Social</option>
+                                <option value="Produção para Eventos">Produção para Eventos (Formatura / Casamento)</option>
+                                <option value="Curso de Automaquiagem / VIP">Curso de Automaquiagem</option>
+                                <option value="Outras Informações">Outras Informações</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-beige-800 mb-2 font-medium">Data Pretendida (Opcional)</label>
+                            <input type="date" id="client-date"
+                                   class="w-full px-4 py-3.5 rounded-2xl bg-beige-50/70 border border-gold/30 text-sm text-beige-900 focus:outline-none focus:border-gold">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-beige-800 mb-2 font-medium">Período de Preferência</label>
+                            <select id="client-period"
+                                    class="w-full px-4 py-3.5 rounded-2xl bg-beige-50/70 border border-gold/30 text-sm text-beige-900 focus:outline-none focus:border-gold">
+                                <option value="Manhã">Manhã</option>
+                                <option value="Tarde" selected>Tarde</option>
+                                <option value="Final de Tarde / Noite">Final de Tarde / Noite</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
+                        <button type="submit"
+                                class="w-full sm:w-auto px-9 py-4 rounded-full bg-gold-metallic text-white text-xs sm:text-sm uppercase tracking-[0.2em] font-semibold shadow-lg hover:scale-[1.02] transition-all flex items-center justify-center gap-2.5">
+                            <i class="ph-fill ph-whatsapp-logo text-xl"></i>
+                            <span>Confirmar e Abrir WhatsApp</span>
+                        </button>
+
+                        <a href="https://wa.me/message/46XHUMZFP6UEN1" target="_blank" rel="noopener noreferrer"
+                           class="w-full sm:w-auto px-7 py-4 rounded-full bg-beige-50 hover:bg-rose-soft/60 text-beige-900 border border-gold/30 text-xs uppercase tracking-[0.18em] font-medium transition-all text-center">
+                            Ir Direto para o Link Oficial
+                        </a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- MODAL DE CONFIRMAÇÃO DE AGENDAMENTO        -->
+    <!-- ========================================== -->
+    <div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-beige-900/50 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-[32px] max-w-md w-full p-7 sm:p-8 border border-gold/40 shadow-2xl text-center relative animate-fadeIn">
+            <button onclick="closeModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-beige-50 hover:bg-rose-soft flex items-center justify-center text-beige-800" aria-label="Fechar modal">
+                <i class="ph ph-x text-lg"></i>
+            </button>
+            <div class="w-14 h-14 rounded-full bg-rose-soft/70 border border-gold/40 flex items-center justify-center mx-auto mb-4 text-rose-deep">
+                <i class="ph-fill ph-sparkle text-2xl"></i>
+            </div>
+            <h4 class="font-serif text-3xl text-beige-900 font-semibold">Solicitação Pronta</h4>
+            <p class="text-xs text-beige-800/75 mt-1 mb-4">
+                Copiamos o resumo do seu pedido para facilitar seu atendimento com a Adhara Freire:
+            </p>
+            <div id="modal-message-preview" class="text-left text-xs bg-beige-50 p-4 rounded-2xl border border-gold/25 text-beige-900 mb-5 leading-relaxed"></div>
+            
+            <div class="flex flex-col gap-2.5">
+                <a href="https://wa.me/message/46XHUMZFP6UEN1" target="_blank" rel="noopener noreferrer" onclick="closeModal()"
+                   class="w-full py-3.5 rounded-full bg-gold-metallic text-white text-xs uppercase tracking-[0.2em] font-semibold shadow-md flex items-center justify-center gap-2">
+                    <i class="ph-fill ph-whatsapp-logo text-lg"></i>
+                    <span>Abrir WhatsApp da Adhara</span>
+                </a>
+                <button onclick="copySummaryText()" id="copy-feedback-btn"
+                        class="w-full py-2.5 rounded-full bg-beige-50 hover:bg-beige-100 text-beige-800 text-xs font-medium transition-colors">
+                    Copiar texto novamente
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- RODAPÉ LUXURY CLEAN                        -->
+    <!-- ========================================== -->
+    <footer class="marble-texture border-t border-gold/30 pt-14 pb-10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="font-serif text-3xl tracking-[0.2em] text-rosegold-gradient font-semibold">
+                ADHARA BEAUTY
+            </h3>
+            <p class="text-xs uppercase tracking-[0.28em] text-beige-800/75 mt-1">
+                Adhara Freire • Maquiagem Social | Cursos | Eventos
+            </p>
+
+            <div class="flex items-center justify-center gap-4 my-7">
+                <a href="https://www.instagram.com/_adharafreirebeauty/" target="_blank" rel="noopener noreferrer"
+                   class="w-11 h-11 rounded-full bg-white border border-gold/35 flex items-center justify-center text-rose-deep hover:bg-gold hover:text-white transition-all shadow-sm"
+                   aria-label="Instagram">
+                    <i class="ph ph-instagram-logo text-xl"></i>
+                </a>
+                <a href="https://wa.me/message/46XHUMZFP6UEN1" target="_blank" rel="noopener noreferrer"
+                   class="w-11 h-11 rounded-full bg-white border border-gold/35 flex items-center justify-center text-gold-dark hover:bg-gold hover:text-white transition-all shadow-sm"
+                   aria-label="WhatsApp">
+                    <i class="ph ph-whatsapp-logo text-xl"></i>
+                </a>
+            </div>
+
+            <p class="text-xs text-beige-800/75 flex items-center justify-center gap-1.5">
+                <i class="ph-fill ph-map-pin text-gold-dark"></i>
+                <span>Itajubá, MG •</span>
+                <a href="https://www.instagram.com/_adharafreirebeauty/" target="_blank" rel="noopener noreferrer" class="underline hover:text-rose-deep">@_adharafreirebeauty</a>
+            </p>
+            <p class="text-[11px] text-beige-800/50 mt-4">
+                © 2026 Adhara Freire Beauty. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://wa.me/message/46XHUMZFP6UEN1" target="_blank" rel="noopener noreferrer"
+       class="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 flex items-center gap-2.5 pl-4 pr-5 py-3 rounded-full bg-rosegold-metallic text-white shadow-[0_10px_30px_rgba(158,98,88,0.45)] hover:scale-105 transition-transform border border-white/40">
+        <i class="ph-fill ph-whatsapp-logo text-xl"></i>
+        <span class="text-xs font-semibold tracking-wider uppercase">Agendar</span>
+    </a>
+
+    <!-- ========================================== -->
+    <!-- SCRIPTS DE INTERATIVIDADE E EFEITO PORTAL  -->
+    <!-- ========================================== -->
+    <script>
+        const portal = document.getElementById('intro-portal');
+        let isPortalOpened = false;
+
+        // Abre as portas de mármore rosé e dourado
+        function openLuxurySite() {
+            if (isPortalOpened) return;
+            isPortalOpened = true;
+            portal.classList.add('portal-opened');
+            triggerScrollReveals();
+        }
+
+        // Permite rever o efeito de abertura quando quiser
+        function replayPortal() {
+            isPortalOpened = false;
+            portal.classList.remove('portal-opened');
+            setTimeout(() => {
+                openLuxurySite();
+            }, 2200);
+        }
+
+        // Menu Mobile Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-menu-icon');
+            const isHidden = menu.classList.contains('hidden');
+            if (isHidden) {
+                menu.classList.remove('hidden');
+                icon.className = 'ph ph-x text-xl';
+            } else {
+                menu.classList.add('hidden');
+                icon.className = 'ph ph-list text-xl';
+            }
+        }
+
+        // Auto-abre suavemente após 1.7 segundos na primeira visita
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                openLuxurySite();
+            }, 1700);
+            triggerScrollReveals();
+        });
+
+        // Animação de revelação suave ao rolar a página
+        function triggerScrollReveals() {
+            const items = document.querySelectorAll('.reveal-item');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            items.forEach(item => observer.observe(item));
+        }
+
+        // Dados da Consultoria Interativa de Estilo
+        const beautyStyles = {
+            glow: {
+                badge: 'Favorito das Clientes',
+                time: 'Maquiagem Social & Eventos',
+                title: 'Beleza Radiante & Pele Viçosa',
+                desc: 'Perfeita para quem ama parecer naturalmente deslumbrante. Esfumado suave em tons terrosos e rosados, pele acetinada com pontos de luz dourado champagne e lábios em tom nude rosé glossy.',
+                serviceName: 'Maquiagem Glow Natural & Iluminado',
+                colors: [
+                    { hex: '#E8C5BE', name: 'Rosé Quartzo' },
+                    { hex: '#DFC082', name: 'Champagne Gold' },
+                    { hex: '#C88D83', name: 'Nude Pêssego' }
+                ]
+            },
+            redlips: {
+                badge: 'Poder & Elegância',
+                time: 'Jantares, Formaturas & Ensaios',
+                title: 'Clássica com Lábios Marcantes',
+                desc: 'Inspirada nas produções atemporais do nosso portfólio: pele aveludada de longa duração, olhos sutilmente iluminados com cílios alongados e o protagonismo de um batom vermelho impecável.',
+                serviceName: 'Maquiagem Clássica Lábios Marcantes',
+                colors: [
+                    { hex: '#9E2B2B', name: 'Vermelho Veludo' },
+                    { hex: '#F3EAE0', name: 'Bege Acetinado' },
+                    { hex: '#C5A059', name: 'Brilho Dourado' }
+                ]
+            },
+            glam: {
+                badge: 'Noite & Festas',
+                time: 'Alta Durabilidade Blindada',
+                title: 'Olhar Glam Dourado & Delineado',
+                desc: 'Ideal para madrinhas, formandas e eventos noturnos. Esfumado marcante nos olhos com pigmentos dourados ou acobreados, delineado expressivo e contorno impecável.',
+                serviceName: 'Produção Glam Olhar Marcante para Eventos',
+                colors: [
+                    { hex: '#3A2D22', name: 'Esfumado Espresso' },
+                    { hex: '#C5A059', name: 'Ouro Real' },
+                    { hex: '#D9A79D', name: 'Lábio Nude Rosé' }
+                ]
+            },
+            curso: {
+                badge: 'Autocuidado Feminino',
+                time: 'Aula Prática Personalizada',
+                title: 'Curso VIP de Automaquiagem',
+                desc: 'Aprenda passo a passo como preparar sua pele, escolher o tom certo de base, fazer um esfumado elegante para qualquer ocasião e aproveitar todos os produtos que você já possui.',
+                serviceName: 'Curso de Automaquiagem VIP',
+                colors: [
+                    { hex: '#F4E3DF', name: 'Preparação de Pele' },
+                    { hex: '#E6D5C3', name: 'Técnica de Contorno' },
+                    { hex: '#C88D83', name: 'Transformação Dia e Noite' }
+                ]
+            }
+        };
+
+        function selectBeautyStyle(key) {
+            const data = beautyStyles[key];
+            if (!data) return;
+
+            // Atualiza estilo dos botões preservando o ícone principal
+            document.querySelectorAll('.style-btn').forEach(btn => {
+                btn.className = 'style-btn w-full text-left px-4 sm:px-5 py-3.5 rounded-2xl border border-beige-200 hover:border-gold/50 text-beige-800 flex items-center justify-between transition-all';
+                const stateIcon = btn.querySelector('.state-icon');
+                if (stateIcon) {
+                    stateIcon.className = 'state-icon ph ph-circle text-beige-800/40 text-lg shrink-0';
+                }
+            });
+
+            const activeBtn = document.getElementById('btn-' + key);
+            activeBtn.className = 'style-btn w-full text-left px-4 sm:px-5 py-3.5 rounded-2xl border border-gold bg-rose-soft/40 text-beige-900 flex items-center justify-between transition-all';
+            const activeIcon = activeBtn.querySelector('.state-icon');
+            if (activeIcon) {
+                activeIcon.className = 'state-icon ph-fill ph-check-circle text-gold text-lg shrink-0';
+            }
+
+            // Atualiza textos do Card
+            document.getElementById('style-badge').textContent = data.badge;
+            document.getElementById('style-time').innerHTML = `<i class="ph ph-clock text-gold-dark"></i> ${data.time}`;
+            document.getElementById('style-title').textContent = data.title;
+            document.getElementById('style-desc').textContent = data.desc;
+
+            // Atualiza paleta
+            const paletteContainer = document.getElementById('style-palette');
+            paletteContainer.innerHTML = data.colors.map(c => `
+                <div class="flex items-center gap-2 bg-white/85 px-3 py-1.5 rounded-full border border-gold/25 text-xs">
+                    <span class="w-3.5 h-3.5 rounded-full border border-white shadow-sm" style="background-color: ${c.hex}"></span> ${c.name}
+                </div>
+            `).join('');
+
+            const ctaBtn = document.getElementById('style-cta-btn');
+            ctaBtn.setAttribute('onclick', `openBookingWithService('${data.serviceName}')`);
+        }
+
+        // Seleciona o serviço e rola até o formulário de agendamento
+        function openBookingWithService(serviceTitle) {
+            const selectEl = document.getElementById('client-service');
+            let matched = false;
+            for (let i = 0; i < selectEl.options.length; i++) {
+                if (selectEl.options[i].value === serviceTitle) {
+                    selectEl.selectedIndex = i;
+                    matched = true;
+                    break;
+                }
+            }
+            if (!matched) {
+                const customOpt = document.createElement('option');
+                customOpt.value = serviceTitle;
+                customOpt.textContent = serviceTitle;
+                selectEl.appendChild(customOpt);
+                selectEl.value = serviceTitle;
+            }
+
+            document.getElementById('agendamento').scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => {
+                document.getElementById('client-name').focus();
+            }, 650);
+        }
+
+        let currentSummaryText = '';
+
+        // Processa o formulário, copia a mensagem personalizada sem emojis e exibe o modal
+        function handleDirectBooking(event) {
+            event.preventDefault();
+            const name = document.getElementById('client-name').value.trim();
+            const service = document.getElementById('client-service').value;
+            const dateVal = document.getElementById('client-date').value;
+            const period = document.getElementById('client-period').value;
+
+            let formattedDate = 'a combinar';
+            if (dateVal) {
+                const [y, m, d] = dateVal.split('-');
+                formattedDate = `${d}/${m}/${y}`;
+            }
+
+            currentSummaryText = `Olá, Adhara! Meu nome é ${name}. Vim pelo seu site e gostaria de agendar:\n- Serviço: ${service}\n- Data: ${formattedDate} (${period})\nPodemos verificar a disponibilidade?`;
+
+            document.getElementById('modal-message-preview').innerText = currentSummaryText;
+            copyTextToClipboard(currentSummaryText);
+
+            const modal = document.getElementById('booking-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function copyTextToClipboard(text) {
+            const tempInput = document.createElement('textarea');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+        }
+
+        function copySummaryText() {
+            copyTextToClipboard(currentSummaryText);
+            const btn = document.getElementById('copy-feedback-btn');
+            btn.textContent = 'Copiado para a área de transferência';
+            setTimeout(() => {
+                btn.textContent = 'Copiar texto novamente';
+            }, 2500);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('booking-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+    </script>
+</body>
+</html>
